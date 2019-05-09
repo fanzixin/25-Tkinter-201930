@@ -88,6 +88,11 @@ def main():
     button3 = ttk.Button(frame, text='Button 2')
     button3.grid()
 
+    entrybox2 = entry2.get()
+    N = int(entrybox2)
+    for k in range(N):
+        print(entrybox1)
+
     # -------------------------------------------------------------------------
     # TODO: 8. As time permits, do other interesting GUI things!
     # -------------------------------------------------------------------------
