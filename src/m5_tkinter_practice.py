@@ -54,6 +54,7 @@ def main():
     button2.grid()
 
     entrybox1 = entry1.get()
+    print(entrybox1)
     if str(entrybox1) == str('ok'):
         button2['command'] = (lambda : print_Hello_on_the_Console())
     else:
@@ -85,13 +86,13 @@ def main():
     entry2 = ttk.Entry(frame)
     entry2.grid()
 
-    button3 = ttk.Button(frame, text='Button 2')
+    button3 = ttk.Button(frame, text='Button 3')
     button3.grid()
 
     entrybox2 = entry2.get()
-    N = int(entrybox2)
-    for k in range(N):
-        print(entrybox1)
+    # N = int(entrybox2)
+    # for k in range(N):
+        # print(entrybox1)
 
     # -------------------------------------------------------------------------
     # TODO: 8. As time permits, do other interesting GUI things!
