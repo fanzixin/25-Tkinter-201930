@@ -54,7 +54,7 @@ def main():
     button2.grid()
 
     entrybox = entry.get()
-    if entrybox == 'ok':
+    if entrybox == str('ok'):
         button2['command'] = (lambda : print_Hello_on_the_Console())
     else:
         button2['command'] = (lambda : print_Goodbye_on_the_Console())
