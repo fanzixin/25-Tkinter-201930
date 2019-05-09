@@ -47,14 +47,14 @@ def main():
     #        on the Console if the current string in the Entry box
     #        is the string 'ok', but print "Goodbye" otherwise.
     # -------------------------------------------------------------------------
-    entry = ttk.Entry(frame)
-    entry.grid()
+    entry1 = ttk.Entry(frame)
+    entry1.grid()
 
     button2 = ttk.Button(frame, text = 'Button 2')
     button2.grid()
 
-    entrybox = entry.get()
-    if entrybox == str('ok'):
+    entrybox1 = entry1.get()
+    if str(entrybox1) == str('ok'):
         button2['command'] = (lambda : print_Hello_on_the_Console())
     else:
         button2['command'] = (lambda : print_Goodbye_on_the_Console())
@@ -82,6 +82,11 @@ def main():
     #      s = entry_box.get()
     #      n = int(s)
     ####################################################################
+    entry2 = ttk.Entry(frame)
+    entry2.grid()
+
+    button3 = ttk.Button(frame, text='Button 2')
+    button3.grid()
 
     # -------------------------------------------------------------------------
     # TODO: 8. As time permits, do other interesting GUI things!
