@@ -37,10 +37,10 @@ def main():
     #   ** make your Button respond to a button-press **
     #   ** by printing   "Hello"  on the Console.     **
     # -------------------------------------------------------------------------
-    button1['command'] = (lambda : print_Hello_on_the_Console())
+    button1['command'] = lambda: print_Hello_on_the_Console()
 
     # -------------------------------------------------------------------------
-    # TODO: 6. After reading and understanding the m4e module,
+    # DONE: 6. After reading and understanding the m4e module,
     #   -- Put an Entry box on the Frame.
     #   -- Put a second Button on the Frame.
     #   -- Make this new Button, when pressed, print "Hello"
@@ -53,15 +53,10 @@ def main():
     button2 = ttk.Button(frame, text = 'Button 2')
     button2.grid()
 
-    entrybox1 = entry1.get()
-    print(entrybox1)
-    if str(entrybox1) == str('ok'):
-        button2['command'] = (lambda : print_Hello_on_the_Console())
-    else:
-        button2['command'] = (lambda : print_Goodbye_on_the_Console())
+    button2['command'] = lambda : print_Hello_or_Goodbye_on_the_Console(entry1)
 
     # -------------------------------------------------------------------------
-    # TODO: 7.
+    # DONE: 7.
     #    -- Put a second Entry on the Frame.
     #    -- Put a third Button on the frame.
     #    -- Make this new Button respond to a button-press as follows:
@@ -89,15 +84,19 @@ def main():
     button3 = ttk.Button(frame, text='Button 3')
     button3.grid()
 
-    entrybox2 = entry2.get()
-    # N = int(entrybox2)
-    # for k in range(N):
-        # print(entrybox1)
+    button3['command'] = lambda: print_N_times(entry1, entry2)
 
     # -------------------------------------------------------------------------
-    # TODO: 8. As time permits, do other interesting GUI things!
+    # DONE: 8. As time permits, do other interesting GUI things!
     # -------------------------------------------------------------------------
+    '''
+    Button 4: print the string in the FIRST Entry box for N times in diagonal, where N is the integer input in the 
+              SECOND Entry Box, but no letters are in the same column.
+    '''
+    button4 = ttk.Button(frame, text = 'Print in diagonal')
+    button4.grid()
 
+    button4['command'] = lambda: print_in_diagonal(entry1, entry2)
 
 
     root.mainloop()
@@ -108,9 +107,26 @@ def print_Hello_on_the_Console():
     print('Hello')
 
 
-def print_Goodbye_on_the_Console():
-    print('Goodbye')
+def print_Hello_or_Goodbye_on_the_Console(entry1):
+    content = entry1.get()
+    if content == 'ok':
+        print('Hello')
+    else:
+        print('Goodbye')
 
+
+def print_N_times(entry1, entry2):
+    string = entry1.get()
+    N = int(entry2.get())
+    print(string * N)
+
+
+def print_in_diagonal(entry1, entry2):
+    string = entry1.get()
+    N = int(entry2.get())
+
+    for k in range(N):
+        print(' ' * len(string) * k + string)
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
